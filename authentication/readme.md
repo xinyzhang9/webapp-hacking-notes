@@ -54,6 +54,15 @@ hydra example.com -L emails.txt -P passwords.txt https-post-form "/login.php:ema
 **CAPTCHA** is commonly used to defend dictionary attack. Since it provide some easy tests (visual recognition) to tell if the user is a real person or computer.
 
 ### HTTPS Enforcement
+**Description**  
+Web Application should always redirect a http request to a https request.
+
+**Case Analysis**  
+HTTPS NOT ENFORCED: http://example.com/login.php => http://example.com/login.php  
+HTTPS ENFORCED: http://example.com/login.php => https://example.com/login.php  
+
+**Summary**  
+HTTP is insecure because the credential is transmitted in plaintext. We should always use HTTPS protocal to protect user's privacy. 
 
 ### Session Regeneration
 
