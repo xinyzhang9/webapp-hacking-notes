@@ -37,6 +37,21 @@ dbStatementExecute();
 ```
 
 ### Dictionary Attack
+**Description**  
+It generally means automated password guessing.
+
+**Case Analysis**  
+1. Hacker uses social engineer methods and know user's account name: alice@example.com  
+2. Hacker uses list of common passwords to attempt loggin
+3. Hack waits for web app's response to see whether the password is correct or not
+
+**Hydra** is a good tool to automate dictionary attack. A typical script is like this: 
+```
+hydra example.com -L emails.txt -P passwords.txt https-post-form "/login.php:email=^USER^&password=^PASS^:Invalid password" -S
+```
+
+**Defend**  
+**CAPTCHA** is commonly used to defend dictionary attack. Since it provide some easy tests (visual recognition) to tell if the user is a real person or computer.
 
 ### HTTPS Enforcement
 
