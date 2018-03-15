@@ -86,7 +86,13 @@ Attacker do enumerations of list of usernames (emails) and could tell if an user
 2. when entered "bob@example.com" with wrong password, the web app return's "invalid password"
 3. The hacker could tell "bob@example.com" is registered.
 
-**defend**  
+**Defend**  
 The web app should return the same response "invalid email or password" in the two scenarios.
 
 ### Best Practices
+**Strong password policy**  
+Strong password = length + randomness. 
+
+**Two-factor authentication (2FA)**  
+2FA = what user knows (password) + what user has (mobile device)
+one-time password(verification code) sent to user's mobile device.
