@@ -2,7 +2,7 @@
 
 ### SQL Injection
 **Description**  
-Hacker uses 'strange' username to bypass password validation and get unauthenticatedd access to user's account.
+Hacker uses 'strange' username to bypass password validation and get unauthenticated access to user's account.
 
 **Case Analysis**  
 Suppose in webapp backend, the authentication logic is as follows.
@@ -53,6 +53,7 @@ hydra example.com -L emails.txt -P passwords.txt https-post-form "/login.php:ema
 **Defend**  
 **CAPTCHA** is commonly used to defend dictionary attack. Since it provide some easy tests (visual recognition) to tell if the user is a real person or computer.
 
+
 ### HTTPS Enforcement
 **Description**  
 Web Application should always redirect a http request to a https request.
@@ -62,7 +63,7 @@ HTTPS NOT ENFORCED: http://example.com/login.php => http://example.com/login.php
 HTTPS ENFORCED: http://example.com/login.php => https://example.com/login.php  
 
 **Summary**  
-HTTP is insecure because the credential is transmitted in plaintext. We should always use HTTPS protocal to protect user's privacy. 
+HTTP is insecure because the credential is transmitted in plaintext. We should always use HTTPS protocol to protect user's privacy. 
 
 ### Session Regeneration
 **Description**  
@@ -76,8 +77,16 @@ When the user is logged out from the system, the attacker could impersonate the 
 
 **Defend**  
 Regenerate cookie with session ID at every time of authentication. Note that only HTTPS is not enough. We also need secure session management.
-
-
 ### User Enumeration
+**Description**  
+Attacker do enumerations of list of usernames (emails) and could tell if an username is registered based on the web app's responses.
+
+**Case Analysis**  
+1. When entered "alice@example.com", the web app returns "invalid email"
+2. when entered "bob@example.com" with wrong password, the web app return's "invalid password"
+3. The hacker could tell "bob@example.com" is registered.
+
+**defend**  
+The web app should return the same response "invalid email or password" in the two scenarios.
 
 ### Best Practices
