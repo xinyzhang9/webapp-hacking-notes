@@ -65,6 +65,18 @@ HTTPS ENFORCED: http://example.com/login.php => https://example.com/login.php
 HTTP is insecure because the credential is transmitted in plaintext. We should always use HTTPS protocal to protect user's privacy. 
 
 ### Session Regeneration
+**Description**  
+When the user is logged out from the system, the attacker could impersonate the user using the same session ID. 
+
+**Case Analysis**  
+1. User is logged out
+2. Hacker learned user's session ID using tools like Burp Suite intercept(non-authenticated)
+3. User logs in
+4. User is logged (authenticated)
+
+**Defend**  
+Regenerate cookie with session ID at every time of authentication. Note that only HTTPS is not enough. We also need secure session management.
+
 
 ### User Enumeration
 
