@@ -1,0 +1,16 @@
+<!DOCTYPE doctype [
+  <!ENTITY myentity SYSTEM "database.yml">
+]>
+
+<sell>
+  <product>
+    <name>Product1</name>
+    <price>100</price>
+    <description>This is description for Product1.</database>
+  </product>
+  <product>
+    <name>Product2</name>
+    <price>200</price>
+    <description>&myentity;</database>
+  </product>
+</sell>

